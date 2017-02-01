@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Cryptography API</title>
+	<link rel="stylesheet" href="css.css">
+	<script type="text/javascript" src="examples.js"></script>
+
+</head>
+	<body>
+		<div class="operations-item">
+		<h1> Web Cryptography API Examples </h1>
+		<input type="submit" value="SHA-256" onclick="sha256()">
+		<input type="submit" value="GenKey" onclick="genKey()">
+		<input type="submit" value="Sign" onclick="sign()">
+		<input type="submit" value="Verify" onclick="verify()">
+		
+		</div>
+		<div>
+		<h3>Results:</h3>
+		<pre id="results"></pre>
+		</div>
+
+		<div>
+		<input type="file" id="file-input"/>
+		<h3>Contents of the file:</h3>
+		<pre id="file-content"></pre>
+		</div>
+
+		<script type="text/javascript">
+			document.getElementById('file-input').addEventListener('change', readSingleFile, false);
+		</script>>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+body {
+	font-family: andale mono;
+    background-image: url("bg.png");
+    background-color: #cccccc;
+}
+
+.general_info {
+	font-size: 85%;
+}
+
+.operations-item {
+	text-align: center;
+}
