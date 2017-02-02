@@ -224,9 +224,7 @@ function decryp() {
 }
 
 function sign() {
-    // genKeysig();
     var encrypt_promise = null;
-
     encrypt_promise = crypto.subtle.sign({ name: "RSASSA-PKCS1-v1_5"}, 
                                          private_key_object_s, 
                                          convertStringToArrayBufferView(data));
@@ -234,14 +232,15 @@ function sign() {
     encrypt_promise.then(
         function(result_signature) {
             signature = result_signature; //signature generated
-            console.log(new Uint8Array(signature));
+            sig_value = new Uint8Array(signature)
+            displayResult(sig_value.toString());
+            console.log(sig_value);
         }, 
         function(e){
             console.log(e);
         }
     );
 }
-
 
 function verify() {
 var decrypt_promise = null;
@@ -252,6 +251,7 @@ var decrypt_promise = null;
 
     decrypt_promise.then(
         function(result) {
+            displayResult(result);
             console.log(result);//true or false
         },
         function(e) {
